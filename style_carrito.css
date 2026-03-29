@@ -110,3 +110,39 @@
 }
 
 /*Ejercicio 9 En @media*/
+
+/* Estilos generales para ambos botones */
+.boton {
+    display: inline-block; /* Permite darle padding y márgenes */
+    padding: 10px 20px; /* Espacio interior (arriba/abajo, izquierda/derecha) */
+    text-decoration: none; /* Quita la línea de subrayado típica de los enlaces */
+    border-radius: 5px; /* Hace los bordes redondeados */
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer; /* Hace que el ratón se ponga como una manita */
+}
+
+/* Estilo específico para el botón de "Comprar ya" (estilo Amazon) */
+.boton-principal {
+    background-color: #ffd814; /* Amarillo Amazon */
+    color: #0f1111;
+    border: 1px solid #fcd200;
+}
+
+/* Efecto al pasar el ratón por encima del botón principal */
+.boton-principal:hover {
+    background-color: #f7ca00;
+}
+
+/* Estilo para el botón de "Seguir comprando" */
+.boton-secundario {
+    background-color: #ffffff;
+    color: #0f1111;
+    border: 1px solid #d5d9d9;
+}
+
+/* Efecto al pasar el ratón por encima del botón secundario */
+.boton-secundario:hover {
+    background-color: #f3f3f3;
+}
