@@ -159,7 +159,19 @@ article a:hover {
     margin-top: 20px;
 }
 
+.productos article {
+    height: 100%; /* Tarjetas igual de altas */
+    box-sizing: border-box; /* Que el padding no deforme la caja */
+} 
+
+/* Alinear los botones abajo */
+.productos article .boton {
+    margin-top: auto; 
+}
+
 .productos article img {
+    height: 200px;
+    object-fit: contain; /* Adapta la imagen sin cortarla */
     border-radius: 8px;
     object-fit: cover; /* Ajuste a tarjeta */
     margin-bottom: 15px;
@@ -167,10 +179,15 @@ article a:hover {
 
 /* Para centrar los videos */
 .promocion {
+    text-align: center; 
+    margin-bottom: 30px;
+}
+
+.contenedor-videos {
     display: flex;
     justify-content: center;
     gap: 20px;
-    flex-wrap: wrap; /* Ajusta a la pantalla */
+    flex-wrap: wrap; 
 }
 
 /* En la página CARRITO */
