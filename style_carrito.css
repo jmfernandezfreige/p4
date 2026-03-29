@@ -4,30 +4,31 @@ body {
     background-color: #f4f4f4;
     color: #333;
     margin: 0; /* Quitamos los márgenes del navegador por defecto */
-    padding: 0;
+    padding: 0; 
 }
 
-/* Centrar el contenido principal y darle un ancho máximo */
+/*Se selecciona margen y ancho de la caja de contenido*/
 header, section, footer {
     width: 90%;
     max-width: 1200px;
-    margin: 20px auto; /* Centra el bloque horizontalmente */
+    margin: 20px auto; /* Margen arriba de cada bloque y centrado a los lados*/
 }
 
-/* --- CABECERA Y NAVEGACIÓN --- */
+/*Estilo de la cabecera*/
 header {
-    text-align: center; /* Centramos los textos del header */
+    text-align: center; /* Se centra el texto */
     background-color: white;
     padding: 20px;
+    border-bottom: 1px solid #ddd;
     border-radius: 10px; /* Bordes redondeados */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.05); /* Sombreado muy suave */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05); /* Sombra muy suave */
 }
 
 nav ul {
-    list-style-type: none; /* Quitamos los puntos de la lista */
+    list-style-type: none; /* Se quitan los puntos de la lista */
     padding: 0;
-    display: flex; /* Usamos flexbox para poner los enlaces en fila */
-    justify-content: center; /* Los centramos */
+    display: flex; /* Enlaces en fila */
+    justify-content: center;
     gap: 20px; /* Espacio entre los enlaces */
 }
 
@@ -39,58 +40,56 @@ nav a {
 
 nav a:hover {
     color: #c45500; /* Cambia a naranja al pasar el ratón */
-    text-decoration: underline; /* Subrayamos al pasar el ratón */
+    text-decoration: none; /* Que no se subraye */
 }
 
-/* --- BUSCADOR --- */
+/* Buscador */
 header form {
     margin-top: 15px;
 }
 
 header input[type="text"] {
+    font-family: 'Segoe UI';
     padding: 10px;
     width: 250px;
     border: 1px solid #ccc;
-    border-radius: 5px 0 0 5px; /* Redondea solo el lado izquierdo */
+    border-radius: 5px;
     outline: none;
 }
 
+/* Resto de propiedades las tiene por ser class="boton" */
 header button {
-    padding: 10px 20px;
-    background-color: #febd69; /* Color de botón buscador Amazon */
+    background-color: #febd69;
     border: 1px solid #f3a847;
-    border-radius: 0 5px 5px 0; /* Redondea solo el lado derecho */
-    cursor: pointer;
-    font-weight: bold;
 }
 
 header button:hover {
     background-color: #f3a847;
 }
 
-/* --- SECCIÓN DE CARRITOS (CSS GRID) --- */
+/* Carritos en la página principal */
 .carritos {
     display: grid; /* Activa la cuadrícula */
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* ¡Magia! Crea columnas adaptables al tamaño de la pantalla */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Columnas adaptables al tamaño de la pantalla */
     grid-gap: 20px; /* Espacio entre las tarjetas */
 }
 
-/* --- TARJETAS DE LOS CARRITOS (FLEXBOX Y EFECTOS) --- */
+/* Para las tarjetas de los carritos */
 .carritos article {
     background-color: white;
-    padding: 30px 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* La sombra base que vimos en tu archivo */
-    display: flex; /* Activa Flexbox */
-    flex-direction: column; /* Apila los elementos en vertical */
-    align-items: center; /* Centra el contenido */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hace que la animación al pasar el ratón sea suave */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Sombra */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animación al pasar el ratón sea suave */
 }
 
-/* Efecto Hover: Lo que pasa cuando pones el ratón encima */
+/* Ratón encima */
 .carritos article:hover {
     box-shadow: 0 8px 15px rgba(0,0,0,0.2); /* Sombra más grande */
-    transform: translateY(-5px); /* Levanta la tarjeta 5 píxeles hacia arriba (Efecto del ejercicio 5 de tu código) */
+    transform: translateY(-5px); /* Levanta la tarjeta 5 píxeles hacia arriba */
 }
 
 .carritos article h2 {
@@ -104,29 +103,17 @@ header button:hover {
     margin-bottom: 20px;
 }
 
-/* Convertimos el enlace de "Detalle del carrito" en un botón */
-.carritos article a {
-    text-decoration: none;
-    background-color: #ffd814;
-    color: #0f1111;
-    padding: 10px 20px;
-    border-radius: 20px; /* Bordes muy redondeados tipo píldora */
-    font-weight: bold;
-    border: 1px solid #fcd200;
-    transition: background-color 0.2s;
-    margin-top: auto; /* Empuja el botón siempre al fondo de la tarjeta */
-}
 
 .carritos article a:hover {
     background-color: #f7ca00;
 }
 
-/* --- FOOTER --- */
+/* Footer */
 footer {
     text-align: center;
     margin-top: 40px;
-    padding-top: 20px;
-    border-top: 1px solid #ddd;
+    padding-top: 40 px;
+    border-top: 2px solid #ddd;
     color: #666;
     font-size: 14px;
 }
@@ -137,44 +124,31 @@ footer a {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Estilos generales para ambos botones */
+/* BOTONES */
 .boton {
     display: inline-block; /* Permite darle padding y márgenes */
     padding: 10px 20px; /* Espacio interior (arriba/abajo, izquierda/derecha) */
-    text-decoration: none; /* Quita la línea de subrayado típica de los enlaces */
-    border-radius: 5px; /* Hace los bordes redondeados */
-    font-family: Arial, sans-serif;
+    text-decoration: none; /* Sin línea de subrayado */
+    border-radius: 5px; /* bordes redondeados */
+    font-family: Segoe UI;
     font-weight: bold;
     text-align: center;
-    cursor: pointer; /* Hace que el ratón se ponga como una manita */
+    cursor: pointer; /* Ratón como una mano */
 }
 
-/* Estilo específico para el botón de "Comprar ya" (estilo Amazon) */
+/* Botones de "Detalle" en index o "Compar ya" */
 .boton-principal {
     background-color: #ffd814; /* Amarillo Amazon */
     color: #0f1111;
     border: 1px solid #fcd200;
 }
 
-/* Efecto al pasar el ratón por encima del botón principal */
+/* Ratón por encima del botón principal */
 .boton-principal:hover {
     background-color: #f7ca00;
 }
 
-/* Estilo para el botón de "Seguir comprando" */
+/* Botón "Seguir comprando" en Detalle carrito */
 .boton-secundario {
     background-color: #ffffff;
     color: #0f1111;
