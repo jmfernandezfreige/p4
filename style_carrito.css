@@ -1,10 +1,54 @@
-/*Estilo para el contenido de todas las páginas*/
+/*Estilos P4 PAT*/
+
+/* BOTONES */
+.boton {
+    display: inline-block; /* Permite darle padding y márgenes */
+    padding: 10px 20px; /* Espacio interior (arriba/abajo, izquierda/derecha) */
+    text-decoration: none; /* Sin línea de subrayado */
+    border-radius: 5px; /* bordes redondeados */
+    font-family: Segoe UI;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer; /* Ratón como una mano */
+}
+
+/* Botones de "Detalle" en index o "Compar ya" */
+.boton-principal {
+    background-color: #ffd814; /* Amarillo Amazon */
+    color: #0f1111;
+    border: 1px solid #fcd200;
+}
+
+/* Ratón por encima del botón principal */
+.boton-principal:hover {
+    background-color: #f7ca00;
+}
+
+/* Botón "Seguir comprando" en Detalle carrito */
+.boton-secundario {
+    background-color: #ffffff;
+    color: #0f1111;
+    border: 1px solid #d5d9d9;
+}
+
+/* Efecto al pasar el ratón por encima del botón secundario */
+.boton-secundario:hover {
+    background-color: #f3f3f3;
+}
+
+
+
+/* CONTENIDO de las PÁGINAS */ 
 body {
     font-family: 'Segoe UI';
     background-color: #f4f4f4;
     color: #333;
     margin: 0; /* Quitamos los márgenes del navegador por defecto */
     padding: 0; 
+}
+
+input, button, select, textarea {
+    font-family: inherit; /* Que usen la fuente 'Segoe UI' del body */
 }
 
 /*Se selecciona margen y ancho de la caja de contenido*/
@@ -49,7 +93,6 @@ header form {
 }
 
 header input[type="text"] {
-    font-family: 'Segoe UI';
     padding: 10px;
     width: 250px;
     border: 1px solid #ccc;
@@ -74,8 +117,8 @@ header button:hover {
     grid-gap: 20px; /* Espacio entre las tarjetas */
 }
 
-/* Para las tarjetas de los carritos */
-.carritos article {
+/* TARJETAS de PRODUCTOS y de CARRITOS */
+article {
     background-color: white;
     padding: 20px;
     border-radius: 10px;
@@ -87,28 +130,140 @@ header button:hover {
 }
 
 /* Ratón encima */
-.carritos article:hover {
+article:hover {
     box-shadow: 0 8px 15px rgba(0,0,0,0.2); /* Sombra más grande */
     transform: translateY(-5px); /* Levanta la tarjeta 5 píxeles hacia arriba */
 }
 
-.carritos article h2 {
+article h2 {
     margin-top: 0;
     color: #444;
 }
 
-.carritos article span {
+article span {
     color: #888;
     font-size: 14px;
     margin-bottom: 20px;
 }
 
 
-.carritos article a:hover {
+article a:hover {
     background-color: #f7ca00;
 }
 
-/* Footer */
+/* En la página PRODUCTOS */
+.productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 20px;
+    margin-top: 20px;
+}
+
+.productos article img {
+    border-radius: 8px;
+    object-fit: cover; /* Ajuste a tarjeta */
+    margin-bottom: 15px;
+}
+
+/* Para centrar los videos */
+.promocion {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap; /* Ajusta a la pantalla */
+}
+
+/* En la página CARRITO */
+.detalle-carrito table {
+    width: 100%; /* Ocupa todo el ancho de la caja */
+    border-collapse: collapse;  /* Une los bordes de las celdas para que no haya huecos */
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Sombra lados y abajo */
+    border-radius: 10px;
+    overflow: hidden; /* Para que el border-radius se aplique a la tabla */
+    margin-bottom: 20px;
+}
+
+.detalle-carrito th, 
+.detalle-carrito td {
+    padding: 15px;
+    text-align: center; /* Texto de las celdas centrado */
+    border-bottom: 1px solid #ddd; /* Línea separadora entre filas */
+}
+
+/* Cabecera de la tabla */
+.detalle-carrito thead {
+    background-color: #007185; /* Azul Amazon */
+    color: white;
+}
+
+/* Estilo para el total a pagar */
+.detalle-carrito tfoot {
+    background-color: #f9f9f9;
+    font-size: 1.1em;
+}
+
+/* Botones */
+.acciones {
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Espacio exacto entre botones */
+}
+
+
+/* En la página CHECKOUT */
+.formulario-pago form {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Sombra lados y abajo*/
+}
+
+.formulario-pago fieldset {
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #fafafa;
+}
+
+.formulario-pago legend {
+    font-weight: bold;
+    color: #007185;
+    background-color: white;
+    padding: 0 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* Cajas de texto y email */
+.formulario-pago input[type="text"],
+.formulario-pago input[type="email"] {
+    width: 100%; /* Ocupan todo el ancho disponible */
+    padding: 12px;
+    margin-top: 8px; /* Separar la caja de la etiqueta */
+    border: 1px solid lightgray;
+    border-radius: 5px;
+}
+
+/* Al hacer clic en una caja de texto pseudo-clase :focus */
+.formulario-pago input[type="text"]:focus,
+.formulario-pago input[type="email"]:focus {
+    border-color: #007185;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 113, 133, 0.3);
+}
+
+.formulario-pago button[type="submit"] {
+    width: 100%;
+    font-size: 1.2em;
+}
+
+
+
+
+
+/* FOOTER en TODAS */
 footer {
     text-align: center;
     margin-top: 40px;
@@ -123,39 +278,7 @@ footer a {
     text-decoration: none;
 }
 
-
-/* BOTONES */
-.boton {
-    display: inline-block; /* Permite darle padding y márgenes */
-    padding: 10px 20px; /* Espacio interior (arriba/abajo, izquierda/derecha) */
-    text-decoration: none; /* Sin línea de subrayado */
-    border-radius: 5px; /* bordes redondeados */
-    font-family: Segoe UI;
-    font-weight: bold;
-    text-align: center;
-    cursor: pointer; /* Ratón como una mano */
-}
-
-/* Botones de "Detalle" en index o "Compar ya" */
-.boton-principal {
-    background-color: #ffd814; /* Amarillo Amazon */
-    color: #0f1111;
-    border: 1px solid #fcd200;
-}
-
-/* Ratón por encima del botón principal */
-.boton-principal:hover {
-    background-color: #f7ca00;
-}
-
-/* Botón "Seguir comprando" en Detalle carrito */
-.boton-secundario {
-    background-color: #ffffff;
-    color: #0f1111;
-    border: 1px solid #d5d9d9;
-}
-
-/* Efecto al pasar el ratón por encima del botón secundario */
-.boton-secundario:hover {
-    background-color: #f3f3f3;
+footer a:hover {
+    color: #c45500;
+    text-decoration: none;
 }
